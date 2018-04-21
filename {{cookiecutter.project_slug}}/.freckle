@@ -1,0 +1,30 @@
+python-dev:
+   python_dev_project_name: {{ cookiecutter.project_name }}
+   python_dev_python_version: {{ cookiecutter.python_version }}
+   python_dev_env_type: {{ cookiecutter.env_type }}
+   python_dev_requirements_files:
+     - requirements_dev.txt
+   # python_dev_setup_type: pip
+   python_dev_setup_type: "pip"
+   python_dev_requirements_files:
+      - requirements_dev.txt
+
+   # python_dev_dependency_packages:
+   #    - pycrypto-related:
+   #        pkgs:
+   #          debian:
+   #            - libssl-dev
+   #            - libffi-dev
+   #            - libsqlite3-dev
+   #          conda:
+   #            - cryptography
+   #            - pycrypto
+   #          other: omit
+
+- vagrant-dev:
+    __auto_run__: false
+    vagrant_dev_providers:
+      - virtualbox
+
+- docker-dev:
+    __auto_run__: false
