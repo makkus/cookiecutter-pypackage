@@ -21,10 +21,10 @@ python-dev:
    #            - pycrypto
    #          other: omit
 
-- vagrant-dev:
+vagrant-dev:
     __auto_run__: false
     vagrant_dev_providers:
       - virtualbox
 
-- docker-dev:
+docker-dev:
     __auto_run__: false
