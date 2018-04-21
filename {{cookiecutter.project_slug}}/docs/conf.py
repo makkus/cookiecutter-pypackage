@@ -20,9 +20,11 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
 
 import {{ cookiecutter.project_slug }}
+import sphinx_redactor_theme
+
+sys.path.insert(0, os.path.abspath('../'))
 
 # -- General configuration ---------------------------------------------
 
@@ -32,7 +34,22 @@ import {{ cookiecutter.project_slug }}
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode']
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinxcontrib.napoleon',
+    'sphinx.ext.autosectionlabel',
+    'sphinx_click.ext',
+    'sphinx.ext.intersphinx'
+]
+
+# intersphinx mappings
+intersphinx_mapping = {
+    'urllib3': ('http://urllib3.readthedocs.org/en/latest', None),
+    'python': ('http://docs.python.org/3', None),
+    'click': ('http://click.pocoo.org/6/', None)
+}
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -158,6 +175,3 @@ texinfo_documents = [
      'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
