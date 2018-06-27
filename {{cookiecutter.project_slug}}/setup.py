@@ -22,7 +22,9 @@ test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest',{%- endif 
     'BSD license': 'License :: OSI Approved :: BSD License',
     'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
     'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
-    'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
+    'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+    'GNU Affero General Public License v3': 'License :: OSI Approved :: GNU Affero General Public License v3',
+    'Parity Public License 2.1.0': 'License :: Other/Proprietary License'
 } %}
 
 setup(
@@ -62,7 +64,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
+    url='https://gitlab.com/{{ cookiecutter.gitlab_username }}/{{ cookiecutter.project_slug }}',
     version='{{ cookiecutter.version }}',
     zip_safe=False,
 )
