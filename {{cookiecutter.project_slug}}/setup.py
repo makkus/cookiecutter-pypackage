@@ -11,7 +11,10 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [{%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=6.0',{%- endif %} ]
+requirements = [
+    {%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=7.0',
+    {%- endif %}
+]
 
 setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %} ]
 
@@ -24,7 +27,7 @@ test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest',{%- endif 
     'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
     'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
     'GNU Affero General Public License v3': 'License :: OSI Approved :: GNU Affero General Public License v3',
-    'Parity Public License 2.1.0': 'License :: Other/Proprietary License'
+    'Parity Public License 3.0.0': 'License :: Other/Proprietary License'
 } %}
 
 setup(

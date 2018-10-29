@@ -1,1 +1,3 @@
+--extra-index-url https://pkgs.frkl.io/frkl/dev
+
 git+https://gitlab.com/frkl/frutils.git

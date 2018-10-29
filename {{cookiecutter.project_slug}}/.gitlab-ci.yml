@@ -16,11 +16,6 @@ python2:
   script: tox -e py27
 
 python34:
-  image: python:3.3
-  stage: test
-  script: tox -e py33
-
-python34:
   image: python:3.4
   stage: test
   script: tox -e py34
@@ -61,8 +56,12 @@ flake8:
 build:
   stage: build
   script:
-    - rm -rf dist
-    - python setup.py sdist bdist_wheel
+    - pip install devpi-client
+    - rm -rf dist build
+    - devpi use https://pkgs.frkl.io/
+    - devpi login frkl --password="${DEVPI_PASSWORD}"
+    - devpi use /frkl/dev
+    - devpi upload
   artifacts:
     paths:
     - dist/

@@ -63,8 +63,8 @@ create a folder with your GitLab username under the ``contributing/contributors`
 folder, copy the ``doc_and_license.txt`` file that can be found in
 this folder into it, and create a pull request::
 
-    $ git clone https://gitlab.com/<your_gitlab_username>/{{ cookiecutter.project_slug }}.git
-    $ cd {{ cookiecutter.project_slug }}/contributing
+    $ git clone https://gitlab.com/<your_gitlab_username>/freckles.git
+    $ cd freckles/contributing
     $ mkdir <your_gitlab_username>
     $ cp doc_and_license.txt <your_gitlab_username>
     $ git add <your_gitlab_username>
@@ -80,8 +80,8 @@ folder and introduce yourself, add contact information or anything else you thin
 
 1. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv {{ cookiecutter.project_slug
-    $ cd {{ cookiecutter.project_slug }}/
+    $ mkvirtualenv freckles
+    $ cd freckles/
     $ python setup.py develop
 
 2. Create a branch for local development::
@@ -120,56 +120,5 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and
-   for PyPy. Check https://gitlab.com/{{ cookiecutter.gitlab_username }}/{{ cookiecutter.project_slug }}/pipelines
+   for PyPy. Check https://gitlab.com/freckles-io/freckles/pipelines
    and make sure that the tests pass for all supported Python versions.
-
-  {% set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
-{% for _ in cookiecutter.project_name %}={% endfor %}
-{{ cookiecutter.project_name }}
-{% for _ in cookiecutter.project_name %}={% endfor %}
-
-{% if is_open_source %}
-.. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg
-           :target: https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}
-           :alt: pypi
-
-.. image:: https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest
-           :target: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest
-           :alt: Documentation Status
-
-.. image:: https://gitlab.com/{{ cookiecutter.gitlab_username }}/{{ cookiecutter.project_slug | replace("_", "-") }}/badges/develop/pipeline.svg
-           :target: https://gitlab.com/{{ cookiecutter.gitlab_username }}/{{ cookiecutter.project_slug }}/pipelines
-           :alt: pipeline status
-
-
-{%- endif %}
-
-{% if cookiecutter.add_pyup_badge == 'y' %}
-.. image:: https://pyup.io/repos/github/{{ cookiecutter.gitlab_username }}/{{ cookiecutter.project_slug }}/shield.svg
-           :target: https://pyup.io/repos/github/{{ cookiecutter.gitlab_username }}/{{ cookiecutter.project_slug }}/
-           :alt: Updates
-{% endif %}
-
-{% if cookiecutter.add_coveralls_badge == 'y' %}
-.. image:: https://coveralls.io/repos/github/makkus/{{ cookiecutter.project_slug }}/badge.svg?branch=develop
-           :target: https://coveralls.io/github/makkus/{{ cookiecutter.project_slug }}?branch=develop
-           :alt: coveralls
-{% endif %}
-
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-           :target: https://github.com/ambv/black
-           :alt: codestyle
-
-
-
-{{ cookiecutter.project_short_description }}
-
-{% if is_open_source %}
-* License: {{ cookiecutter.open_source_license }}
-* Documentation: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io.
-{% endif %}
-
-Features
---------
-
-* TODO
