@@ -80,7 +80,7 @@ folder and introduce yourself, add contact information or anything else you thin
 
 1. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
-    $ mkvirtualenv {{ cookiecutter.project_slug
+    $ mkvirtualenv {{ cookiecutter.project_slug }}
     $ cd {{ cookiecutter.project_slug }}/
     $ python setup.py develop
 
