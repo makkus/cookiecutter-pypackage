@@ -38,6 +38,8 @@ setup(
         'Intended Audience :: Developers',
 {%- if cookiecutter.open_source_license in license_classifiers %}
         '{{ license_classifiers[cookiecutter.open_source_license] }}',
+        {% else %}
+        'License :: Other/Proprietary License',
 {%- endif %}
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
